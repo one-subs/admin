@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useState } from 'react';
 import AuthContext from "../context/AuthContext";
 import useHttp from "../hooks/http.hook";
 import Alert from "./components/Alert.js";
-import SubsGraph from './components/SubsGraph.js';
 import MoneyGraph from './components/MoneyGraph.js';
 import Months from './components/Months.js';
 
@@ -54,23 +53,23 @@ const Finance = () => {
 
                     <div className="horizontal" style={{ marginTop: '100px' }}>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#f1c40f' }}>${income.toFixed(1)}</h1>
+                            <h1 style={{ color: '#f1c40f' }}>${income.toFixed(1)}</h1>
                             <h2>income</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#e74c3c' }}>${share.toFixed(1)}</h1>
+                            <h1 style={{ color: '#e74c3c' }}>${share.toFixed(1)}</h1>
                             <h2>share</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#45b39d' }}>${(income - share).toFixed(1)}</h1>
+                            <h1 style={{ color: '#45b39d' }}>${(income - share).toFixed(1)}</h1>
                             <h2>profit</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#3498db' }}>{history.length}</h1>
+                            <h1 style={{ color: '#3498db' }}>{history.length}</h1>
                             <h2>access</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#8e44ad' }}>{finance.length}</h1>
+                            <h1 style={{ color: '#8e44ad' }}>{finance.length}</h1>
                             <h2>subs</h2>
                         </div>                    
                     </div>
