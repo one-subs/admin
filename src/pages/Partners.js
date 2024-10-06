@@ -40,10 +40,11 @@ const Finance = () => {
                 <div className="right_panel">
                     <div className="scroll">{
                         partners.map((element, index) => {
-                            if (element.status === "pending") return <div key={index} className={id === index ? "active_yellow": "yellow"} onClick={() => setId(index)}>{element.name}</div>
+                            if (element.status === "pending") return <div key={index} className={id === index ? "active_yellow" : "yellow"} onClick={() => setId(index)}>{element.name}</div>
                             if (element.status === "testing") return <div key={index} className={id === index ? "active_purple" : "purple"} onClick={() => setId(index)}>{element.name}</div>
                             if (element.status === "active") return <div key={index} className={id === index ? "active_green" : "green"} onClick={() => setId(index)}>{element.name}</div>
                             if (element.status === "banned") return <div key={index} className={id === index ? "active_red" : "red"} onClick={() => setId(index)}>{element.name}</div>
+                            return null;
                         })
                     }</div>
                 </div>
@@ -52,32 +53,32 @@ const Finance = () => {
 
                     <div className="horizontal" style={{ marginTop: '100px' }}>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#3498db' }}>{partners.length}</h1>
+                            <h1 style={{ color: '#3498db' }}>{partners.length}</h1>
                             <h2>total</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#8e44ad' }}>{partners.reduce((acc, curr) => {
+                            <h1 style={{ color: '#8e44ad' }}>{partners.reduce((acc, curr) => {
                                 if (curr.status === "testing") return acc + 1
                                 else return acc + 0
                             }, 0)}</h1>
                             <h2>testing</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#f1c40f' }}>{partners.reduce((acc, curr) => {
+                            <h1 style={{ color: '#f1c40f' }}>{partners.reduce((acc, curr) => {
                                 if (curr.status === "pending") return acc + 1
                                 else return acc + 0
                             }, 0)}</h1>
                             <h2>pending</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#45b39d' }}>{partners.reduce((acc, curr) => {
+                            <h1 style={{ color: '#45b39d' }}>{partners.reduce((acc, curr) => {
                                 if (curr.status === "active") return acc + 1
                                 else return acc + 0
                             }, 0)}</h1>
                             <h2>active</h2>
                         </div>
                         <div className="bottom_last_card">
-                            <h1 style={{ color: '#334155', color: '#e74c3c' }}>{partners.reduce((acc, curr) => {
+                            <h1 style={{ color: '#e74c3c' }}>{partners.reduce((acc, curr) => {
                                 if (curr.status === "banned") return acc + 1
                                 else return acc + 0
                             }, 0)}</h1>
